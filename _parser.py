@@ -25,7 +25,7 @@ grammar = parsimonious.Grammar(r"""
 
     b_clause = "B)" _ datetime
     c_clause = "C)" _ ((datetime estimated?) / permanent)
-    estimated = "EST"
+    estimated = _? "EST"
     permanent = "PERM"
 
     d_clause = "D)" _ till_next_clause
